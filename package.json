@@ -1,8 +1,8 @@
 {
-  "name": "hello-world",
+  "name": "plantuml",
   "version": "0.0.0",
-  "description": "Hello World plugin description",
-  "repository": "https://github.com/jmerle/inkdrop-hello-world",
+  "description": "Add PlantUML diagrams to Inkdrop notes",
+  "repository": "https://github.com/jmerle/inkdrop-plantuml",
   "license": "MIT",
   "main": "./dist/index",
   "scripts": {

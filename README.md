@@ -15,28 +15,28 @@ See [Auto Reload](https://my.inkdrop.app/plugins/auto-reload) for a plugin based
 
 ---
 
-# Hello World plugin for Inkdrop
+# PlantUML plugin for Inkdrop
 
-[![Build Status](https://dev.azure.com/jmerle/inkdrop-hello-world/_apis/build/status/Build?branchName=master)](https://dev.azure.com/jmerle/inkdrop-hello-world/_build/latest?definitionId=1&branchName=master)
-[![Latest release](https://img.shields.io/github/v/release/jmerle/inkdrop-hello-world)](https://my.inkdrop.app/plugins/hello-world)
-[![License](https://img.shields.io/github/license/jmerle/inkdrop-hello-world)](https://github.com/jmerle/inkdrop-hello-world/blob/master/LICENSE)
+[![Build Status](https://dev.azure.com/jmerle/inkdrop-plantuml/_apis/build/status/Build?branchName=master)](https://dev.azure.com/jmerle/inkdrop-plantuml/_build/latest?definitionId=1&branchName=master)
+[![Latest release](https://img.shields.io/github/v/release/jmerle/inkdrop-plantuml)](https://my.inkdrop.app/plugins/plantuml)
+[![License](https://img.shields.io/github/license/jmerle/inkdrop-plantuml)](https://github.com/jmerle/inkdrop-plantuml/blob/master/LICENSE)
 
-Short description about the plugin.
+This plugin makes it possible to add PlantUML diagrams to notes. Selfhosted PlantUML servers are supported.
 
 ## Install
 
 ```
-ipm install hello-world
+ipm install plantuml
 ```
 
 ## Usage
 
-Plugin usage, supported by screenshots where useful.
+TBD
 
 ## Changelog
 
-See the [GitHub releases](https://github.com/jmerle/inkdrop-hello-world/releases) for an overview of what changed in each update.
+See the [GitHub releases](https://github.com/jmerle/inkdrop-plantuml/releases) for an overview of what changed in each update.
 
 ## Contributing
 
-All contributions are welcome. Please read the [Contributing Guide](https://github.com/jmerle/inkdrop-hello-world/blob/master/CONTRIBUTING.md) first as it contains information regarding the tools used by the project and instructions on how to set up a development environment.
+All contributions are welcome. Please read the [Contributing Guide](https://github.com/jmerle/inkdrop-plantuml/blob/master/CONTRIBUTING.md) first as it contains information regarding the tools used by the project and instructions on how to set up a development environment.
