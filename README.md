@@ -4,7 +4,7 @@
 [![Latest release](https://img.shields.io/github/v/release/jmerle/inkdrop-plantuml)](https://my.inkdrop.app/plugins/plantuml)
 [![License](https://img.shields.io/github/license/jmerle/inkdrop-plantuml)](https://github.com/jmerle/inkdrop-plantuml/blob/master/LICENSE)
 
-This plugin makes it possible to add PlantUML diagrams to notes. Selfhosted PlantUML servers are supported.
+This plugin makes it possible to add PlantUML diagrams to notes.
 
 ## Install
 
@@ -14,7 +14,21 @@ ipm install plantuml
 
 ## Usage
 
-TBD
+    ```plantuml
+    @startuml
+    autonumber
+    Bob -> Alice : Authentication Request
+    Bob <- Alice : Authentication Response
+    @enduml
+    ```
+
+Will be rendered as:
+
+![](https://i.imgur.com/o7bFhvy.png)
+
+The plugin has two modes, which can be configured in the plugin's settings:
+- Local (default): diagrams are generated using the PlantUML jar provided by the plugin. To be able to generate all diagram types [Graphviz](https://graphviz.org/) needs to be installed separately.
+- Server: diagrams are generated using the PlantUML server located at the server url provided in the plugin's settings.
 
 ## Changelog
 
