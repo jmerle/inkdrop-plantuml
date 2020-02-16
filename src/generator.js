@@ -37,7 +37,10 @@ function getLocalImage(code) {
         '-pipe',
       ]);
 
+      let canceled = false;
+
       onCancel(() => {
+        canceled = true;
         proc.kill();
       });
 
@@ -59,7 +62,9 @@ function getLocalImage(code) {
       getStream
         .buffer(proc.stdout)
         .then(buffer => {
-          resolve('data:image/png;base64,' + buffer.toString('base64'));
+          if (!canceled) {
+            resolve('data:image/png;base64,' + buffer.toString('base64'));
+          }
         })
         .catch(err => reject(err.message));
     } catch (err) {

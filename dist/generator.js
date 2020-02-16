@@ -44,7 +44,9 @@ function getLocalImage(code) {
   return new _bluebird.default((resolve, reject, onCancel) => {
     try {
       const proc = (0, _execa.default)('java', ['-jar', '-Djava.awt.headless=true', getJarPath(), '-tpng', '-pipe']);
+      let canceled = false;
       onCancel(() => {
+        canceled = true;
         proc.kill();
       });
       process.nextTick(() => {
@@ -61,7 +63,9 @@ function getLocalImage(code) {
       });
 
       _getStream.default.buffer(proc.stdout).then(buffer => {
-        resolve('data:image/png;base64,' + buffer.toString('base64'));
+        if (!canceled) {
+          resolve('data:image/png;base64,' + buffer.toString('base64'));
+        }
       }).catch(err => reject(err.message));
     } catch (err) {
       reject(err);

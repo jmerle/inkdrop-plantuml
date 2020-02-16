@@ -69,10 +69,6 @@ export class PlantUML extends React.Component {
       return this.renderError(error.message);
     }
 
-    if (image === 'data:image/png;base64,') {
-      return <div ref={this.containerRef} />;
-    }
-
     return <img src={image} ref={this.containerRef} />;
   }
 
