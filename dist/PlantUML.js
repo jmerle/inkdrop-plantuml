@@ -106,7 +106,8 @@ class PlantUML extends React.Component {
       this.currentPromise.cancel();
     }
 
-    this.currentPromise = (0, _generator.createImageURL)(this.getCode()).then(url => {
+    this.currentPromise = (0, _generator.createImageURL)(this.getCode());
+    this.currentPromise.then(url => {
       this.setState({
         image: url,
         error: null

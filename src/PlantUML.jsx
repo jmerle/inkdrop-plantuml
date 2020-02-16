@@ -90,7 +90,8 @@ export class PlantUML extends React.Component {
       this.currentPromise.cancel();
     }
 
-    this.currentPromise = createImageURL(this.getCode())
+    this.currentPromise = createImageURL(this.getCode());
+    this.currentPromise
       .then(url => {
         this.setState({
           image: url,

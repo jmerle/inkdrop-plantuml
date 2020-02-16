@@ -15,17 +15,13 @@ var _execa = _interopRequireDefault(require("execa"));
 
 var _getStream = _interopRequireDefault(require("get-stream"));
 
-var _bluebird = _interopRequireDefault(require("bluebird"));
+var _pCancelable = _interopRequireDefault(require("p-cancelable"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-_bluebird.default.config({
-  cancellation: true
-});
 
 function getJarPath() {
   const vendorDirectory = path.resolve(__dirname, '../vendor');
@@ -41,9 +37,10 @@ function getJarPath() {
 }
 
 function getLocalImage(code) {
-  return new _bluebird.default((resolve, reject, onCancel) => {
+  return new _pCancelable.default((resolve, reject, onCancel) => {
     try {
       const proc = (0, _execa.default)('java', ['-jar', '-Djava.awt.headless=true', getJarPath(), '-tpng', '-pipe']);
+      onCancel.shouldReject = false;
       onCancel(() => {
         proc.kill();
       });
@@ -70,7 +67,7 @@ function getLocalImage(code) {
 }
 
 function getServerImage(code, url) {
-  return _bluebird.default.resolve(path.join(url, 'img', (0, _plantumlEncoder.encode)(code)));
+  return Promise.resolve(path.join(url, 'img', (0, _plantumlEncoder.encode)(code)));
 }
 
 function createImageURL(code) {
