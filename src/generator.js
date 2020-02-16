@@ -3,7 +3,11 @@ import * as fs from 'fs';
 import { encode } from 'plantuml-encoder';
 import execa from 'execa';
 import getStream from 'get-stream';
-import PCancelable from 'p-cancelable';
+import Promise from 'bluebird';
+
+Promise.config({
+  cancellation: true,
+});
 
 function getJarPath() {
   const vendorDirectory = path.resolve(__dirname, '../vendor');
@@ -23,7 +27,7 @@ function getJarPath() {
 }
 
 function getLocalImage(code) {
-  return new PCancelable((resolve, reject, onCancel) => {
+  return new Promise((resolve, reject, onCancel) => {
     try {
       const proc = execa('java', [
         '-jar',
@@ -33,7 +37,6 @@ function getLocalImage(code) {
         '-pipe',
       ]);
 
-      onCancel.shouldReject = false;
       onCancel(() => {
         proc.kill();
       });
