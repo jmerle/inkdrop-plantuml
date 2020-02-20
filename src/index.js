@@ -1,3 +1,5 @@
+'use babel';
+
 import { markdownRenderer } from 'inkdrop';
 import { PlantUML } from './PlantUML';
 

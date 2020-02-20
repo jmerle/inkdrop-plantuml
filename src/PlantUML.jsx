@@ -1,3 +1,5 @@
+'use babel';
+
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { CompositeDisposable } from 'event-kit';
