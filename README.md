@@ -24,7 +24,7 @@ ipm install plantuml
 
 Will be rendered as:
 
-![](https://i.imgur.com/o7bFhvy.png)
+![](./media/diagram.png)
 
 The plugin has two modes, which can be configured in the plugin's settings:
 - Local (default): diagrams are generated using the PlantUML jar provided by the plugin. Requires Java to be installed and available on your `PATH`. To be able to generate all diagram types [Graphviz](https://graphviz.org/) needs to be installed separately.
