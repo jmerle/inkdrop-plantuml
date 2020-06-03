@@ -1,6 +1,6 @@
 # PlantUML plugin for Inkdrop
 
-[![Build Status](https://dev.azure.com/jmerle/inkdrop-plantuml/_apis/build/status/Build?branchName=master)](https://dev.azure.com/jmerle/inkdrop-plantuml/_build/latest?definitionId=19&branchName=master)
+[![Build Status](https://github.com/jmerle/inkdrop-plantuml/workflows/Build/badge.svg)](https://github.com/jmerle/inkdrop-plantuml/actions?query=workflow%3ABuild)
 [![Latest release](https://img.shields.io/github/v/release/jmerle/inkdrop-plantuml)](https://my.inkdrop.app/plugins/plantuml)
 [![License](https://img.shields.io/github/license/jmerle/inkdrop-plantuml)](https://github.com/jmerle/inkdrop-plantuml/blob/master/LICENSE)
 
