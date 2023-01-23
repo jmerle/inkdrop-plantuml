@@ -1,7 +1,6 @@
 'use babel';
 
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import { CompositeDisposable } from 'event-kit';
 import { createImageURL } from './generator';
 
@@ -112,7 +111,3 @@ export class PlantUML extends React.Component {
     return this.getCode() !== this.getCode(otherProps);
   }
 }
-
-PlantUML.propTypes = {
-  children: PropTypes.node,
-};
