@@ -1,6 +1,6 @@
 {
   "name": "plantuml",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Add PlantUML diagrams to Inkdrop notes",
   "repository": "https://github.com/jmerle/inkdrop-plantuml",
   "license": "MIT",
