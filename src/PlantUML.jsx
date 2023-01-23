@@ -18,7 +18,7 @@ export class PlantUML extends React.Component {
     this.containerRef = React.createRef();
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.subscriptions = new CompositeDisposable();
 
     const configCallback = () => this.renderDiagram();
@@ -28,6 +28,10 @@ export class PlantUML extends React.Component {
       const disposable = inkdrop.config.onDidChange(configKey, configCallback);
       this.subscriptions.add(disposable);
     }
+
+    this.renderDiagram();
+
+    this.containerRef.current.parentElement.classList.add('plantuml-container');
   }
 
   componentWillUnmount() {
@@ -36,12 +40,6 @@ export class PlantUML extends React.Component {
     if (this.currentPromise !== null) {
       this.currentPromise.cancel();
     }
-  }
-
-  componentDidMount() {
-    this.renderDiagram();
-
-    this.containerRef.current.parentElement.classList.add('plantuml-container');
   }
 
   componentDidUpdate(previousProps) {
