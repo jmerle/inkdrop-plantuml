@@ -1,9 +1,8 @@
 # PlantUML plugin for Inkdrop
 
-[![Build status](https://github.com/jmerle/inkdrop-plantuml/workflows/Build/badge.svg)](https://github.com/jmerle/inkdrop-plantuml/actions?query=workflow%3ABuild)
-[![Latest release](https://inkdrop-plugin-badge.vercel.app/api/version/plantuml?style=flat)](https://my.inkdrop.app/plugins/plantuml)
+[![Build Status](https://github.com/jmerle/inkdrop-plantuml/workflows/Build/badge.svg)](https://github.com/jmerle/inkdrop-plantuml/actions/workflows/build.yml)
+[![Latest Release](https://inkdrop-plugin-badge.vercel.app/api/version/plantuml?style=flat)](https://my.inkdrop.app/plugins/plantuml)
 [![Downloads](https://inkdrop-plugin-badge.vercel.app/api/downloads/plantuml?style=flat)](https://my.inkdrop.app/plugins/plantuml)
-[![License](https://img.shields.io/github/license/jmerle/inkdrop-plantuml)](https://github.com/jmerle/inkdrop-plantuml/blob/master/LICENSE)
 
 This plugin makes it possible to add PlantUML diagrams to notes.
 
